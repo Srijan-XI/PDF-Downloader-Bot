@@ -10,10 +10,10 @@ import os
 # ============================================
 
 # Get bot token from environment variable or set it here
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8224872646:AAHuknu1JnOL5x0W72XpjNljjR0PfjUytI4")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
 
 # If BOT_TOKEN is not set, raise an error with instructions
-if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE" or not BOT_TOKEN:
     print("\n" + "="*60)
     print("⚠️  BOT TOKEN NOT CONFIGURED!")
     print("="*60)

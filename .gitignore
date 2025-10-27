@@ -14,6 +14,7 @@ ENV/
 # Temporary downloads
 temp_downloads/
 *.pdf
+*.zip
 
 # IDE
 .vscode/
