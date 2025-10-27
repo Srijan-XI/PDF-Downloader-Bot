@@ -26,6 +26,17 @@
 
 ---
 
+#### `/bye`
+**Description:** Say goodbye and exit the bot (cancels any active downloads)  
+**Usage:** `/bye`  
+**Example:**
+```
+/bye
+```
+**Output:** Goodbye message with quick tips for next time
+
+---
+
 ### **Download Commands**
 
 #### `/download <url>` or `/d <url>`
@@ -313,6 +324,7 @@ Click "⚡ Workers" button
 - `/start` - Initialize bot
 - `/download <url>` - Main function
 - `/help` - Get help
+- `/bye` - Exit bot
 
 ### **Important (Use Often)**
 - `/settings` - Configure before downloads
@@ -331,6 +343,7 @@ Click "⚡ Workers" button
 |---------|----------------|----------|
 | `/start` | - | Welcome & intro |
 | `/help` | - | Show help |
+| `/bye` | - | Goodbye & exit |
 | `/download <url>` | `/d <url>` | Download PDFs |
 | `/settings` | - | Configure bot |
 | `/status` | `/s` | Check progress |
@@ -379,9 +392,10 @@ Set Workers: 5
 If you need help:
 
 1. **Check help:** `/help`
-2. **View status:** `/status`
+2. **View status:** `/status` or `/s`
 3. **Reset:** `/cancel` then `/start`
 4. **Reconfigure:** `/settings`
+5. **Exit bot:** `/bye`
 
 ---
 

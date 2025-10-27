@@ -605,6 +605,31 @@ async def resume_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
+async def bye_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle /bye command"""
+    user_id = update.effective_user.id
+    session = get_user_session(user_id)
+    
+    # Cancel any active downloads
+    if session.is_downloading:
+        session.is_downloading = False
+        session.is_paused = False
+        session.cleanup()
+    
+    bye_text = (
+        "👋 <b>Goodbye!</b>\n\n"
+        "Thank you for using PDF Downloader Bot!\n\n"
+        "Created by Srijan | Srijanxi Technologies\n\n"
+        "💡 <b>Quick Tips:</b>\n"
+        "• Use /start to begin again\n"
+        "• Use /help for assistance\n"
+        "• Use /download to get PDFs\n\n"
+        "See you next time! 🚀"
+    )
+    
+    await update.message.reply_text(bye_text, parse_mode=ParseMode.HTML)
+
+
 # Callback query handlers
 async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle button clicks"""
@@ -710,6 +735,7 @@ def main():
     application.add_handler(CommandHandler("stop", cancel_command))  # Alias
     application.add_handler(CommandHandler("pause", pause_command))
     application.add_handler(CommandHandler("resume", resume_command))
+    application.add_handler(CommandHandler("bye", bye_command))
     application.add_handler(CallbackQueryHandler(button_callback))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_settings_input))
     
